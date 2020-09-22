@@ -17,10 +17,11 @@ def my_callback(channel):
 	if flag == 1:
 		GPIO.output(3,False)
 		flag = 0
+		time.sleep(0.1)
 	else:
 		GPIO.output(3,True)
 		flag = 1
-
+		time.sleep(0.1)
 GPIO.add_event_detect(5,GPIO.RISING,callback=my_callback , bouncetime=200)
 if __name__ == "__main__":
 	main()
